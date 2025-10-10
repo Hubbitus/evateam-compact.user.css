@@ -1,0 +1,268 @@
+/* ==UserStyle==
+@name           EvaTeam compact
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Compact interface for EvaTeam.ru (JIRA competitor)
+@author         Pavel Alexeev <Pahan@Hubbitus.info>
+==/UserStyle== */
+
+@-moz-document regexp("^https?://eva[-\\d\\w]*\\..*") {
+	/**
+	* Main URLs to check against:
+	* - https://eva.gid.team/project/Roadmap/RM-000059#rabota-komandy-po-proektu-mrg
+	* - https://eva.gid.team/project/Task/DEVOPS-8327#grafana-dovesti-do-sostojanija-prigodnogo-dlja-raboty
+	**/
+
+	[_nghost-ng-c158529743] {
+		--node-min-height: 20px !important;
+		--tree-margin-top: 0 !important;
+		--new-mode-tree-node-padding-left: 0 !important;
+		--nested-nodes-first-level-padding-left: 29px !important;
+		--node-settings-margin: 0 !important;
+		--nested-nodes-name-item-margin: 0 !important;
+	}
+
+	/** Top header **/
+	.project-content {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	mat-drawer, header.main__menu {
+		height: 32px !important;
+	}
+	mat-drawer.drawer-header {
+		z-index: 90;
+	}
+	mat-drawer-content.drawer-container, .drawer-container .drawer-content.displaced {
+		height: 100vh !important;
+	}
+	mat-drawer-content.mat-drawer-content {
+		margin-top: 0 !important;
+		top: 31px;
+		height: 100vh;
+		z-index: 100;
+	}
+	.page__navigate { /* project name */
+		top: 1px;
+		left: 750px;
+		background: lightgoldenrodyellow;
+		z-index: 120;
+		opacity: 0.8;
+		width: auto !important;
+		height: 29px;
+		border-radius: 5px;
+	}
+	.page__navigate .hamburger, .page__navigate .hamburger app-cmf-navigate-panel, .page__navigate .hamburger .navigate__selected__item {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.toolbar {
+		position: absolute;
+		right: 0;
+		width: fit-content;
+		padding: 0;
+		margin-top: -13px;
+		z-index: 100;
+	}
+	.toolbar .left {
+		padding-top: 0;
+		padding-right: 0px;
+		height: 30px;
+		width: fit-content;
+	}
+	.gantt__layout {
+		height: calc(100% - 22px);
+	}
+	[_nghost-ng-c758184429] .gantt__layout__tree[_ngcontent-ng-c758184429], .gantt__layout__chart, .resize-controller-x-gantt {
+		height: calc(100% + 45px);
+	}
+
+	.cmf-tree[_ngcontent-ng-c2048061549] .cmf-tree-node[_ngcontent-ng-c2048061549] .node-name-item[_ngcontent-ng-c2048061549] {
+		display: contents;
+	}
+
+	.project-module {
+		margin-top: 0px;
+	}
+	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
+		height: calc(100vh - 3px) !important;
+	}
+	.scrollable-block {
+		height: 100% !important;
+	}
+	/** /Top header **/
+
+	/** Tree of docs at left **/
+	/* Tree of docs at left: Break long doc names in left tree */
+	.cmf-tree[_ngcontent-ng-c158529743] .overflow-ellipsis[_ngcontent-ng-c158529743] .node-name-item[_ngcontent-ng-c158529743] > span[_ngcontent-ng-c158529743] {
+		white-space: break-spaces;
+		line-height: 0.9;
+	}
+	/* Tree of docs at left: list items */
+	.cmf-tree[_ngcontent-ng-c158529743] .cmf-tree-node[_ngcontent-ng-c158529743] .node-name-item[_ngcontent-ng-c158529743] {
+		display: inline list-item;
+		margin: 0;
+	}
+	/* Compact chapters */
+	.cmf-tree-container.new-mode[_ngcontent-ng-c158529743] .iconed-node[_ngcontent-ng-c158529743] {
+		margin: 0;
+	}
+	mat-tree-node, mat-tree-node a {
+		min-height: 10px !important;
+	}
+	.cmf-tree[_ngcontent-ng-c158529743] .nested-nodes[_ngcontent-ng-c158529743] .cmf-tree-node[_ngcontent-ng-c158529743] .node-name[_ngcontent-ng-c158529743] {
+  		padding-left: 0;
+	}
+	/** /Tree of docs at left **/
+
+	/** Fix task No truncation in Task links list **/
+	.item-link[_ngcontent-ng-c422728019] {
+		overflow: visible;
+	}
+
+	/** Task view **/
+	h1, h2, h3, h4, h5, h6, p, wg-field, .expansion-panel-header, .wrapper__right, .content__full, .mode-list, .mode-gantt, .project-module-sidenav, div.content-item /*, .form__title*/, .app-comment-form {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.toolbar {
+		top: 12px !important;
+		padding: 0px 20px 5px 28px;
+	}
+	#ganttChartToolbarId.toolbar {
+		top: 0 !important;
+	}
+	.mode-list, .mode-gantt {
+		padding: 0 5px !important;
+	}
+	.gantt .header {
+		height: 25px !important;
+		width: fit-content;
+	}
+	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
+		padding: 1em;
+	}
+	.project-module-sidenav {
+		height: 100%;
+	}
+	.crud__group__wrapper {
+		border: 1px solid lightgrey;
+		border-radius: 5px;
+	}
+	[_nghost-ng-c1144403715] .expansion-panel-header[_ngcontent-ng-c1144403715] {
+		height: auto;
+	}
+	.expansion-panel-header {
+		border: 1px solid var(--expansion-panel-border-color);
+		border-radius: 20px;
+	}
+	.expansion-panel-header::before {
+		display: none;
+	}
+	.expansion-panel-header .header {
+		padding-left: 1em;
+	}
+	.expansion-panel-content {
+		margin-top: -11px;
+		padding: 10px 10px 0 10px !important;
+		border-radius: 0 0 5px 5px !important;
+	}
+	wg-field:has(wg-field-title.tags) {
+		display: flex;
+	}
+	wg-field:has(wg-field-title.tags) wg-field-title {
+		margin: auto 0;
+	}
+
+	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
+		padding: 0 1em 1em 1em;
+	}
+	.activity-title[_ngcontent-ng-c1721141748] {
+		float: left;
+	}
+	.activity-title[_ngcontent-ng-c1721141748] app-cmf-icon::before {
+		content: ":";
+		visibility: visible;
+	}
+	.content__left-full div:has(h2.activity-title){
+		border: 1px solid var(--expansion-panel-border-color);
+		margin-top: 2px;
+	}
+	.form__title {
+		margin-block: 0.5em !important;
+		text-shadow: 1px 2px 5px #0745a6;
+	}
+	.form-header-tags {
+		margin-top: 5px;
+  		margin-bottom: -5px;
+	}
+
+	/** Full width of Task **/
+	.normal-screen {
+		max-width: 100%;
+	}
+	.body__full {
+		max-width: 100%;
+		padding: 0 !important;
+		margin: 0;
+	}
+	.toolbar.full, .toolbar.full .toolbar__left-full {
+		padding: 0 !important;
+		margin: 0 !important;
+		width: 100%;
+		display: flex;
+	}
+	.toolbar.full {
+		margin: 1px 0 7px 14px !important;
+		display: contents;
+	}
+	/** /Full width of Task **/
+	/** /Task view **/
+
+	/** Roadmap view like https://eva.gid.team/project/Roadmap/RM-000059#rabota-komandy-po-proektu-mrg **/
+	.grid-row {
+		font-size: clamp(60%, 100%, 110%);
+	}
+	.column {
+		padding: 2px !important;
+	}
+	.column .name {
+		white-space: normal !important;
+	}
+	.column .node-icon { /* Group open icons */
+		margin: -8px 1px 1px 1px;
+	}
+	.column .node-icon:has(svg[fill=none]) { /* Issue type icon */
+		margin-top: -2px;
+	}
+	/** /Roadmap view **/
+
+	/** left tree **/
+	.cmf-tree[_ngcontent-ng-c2048061549] .overflow-ellipsis[_ngcontent-ng-c2048061549] .node-name-item[_ngcontent-ng-c2048061549] > span[_ngcontent-ng-c2048061549]{
+		white-space: normal;
+	}
+	.cmf-tree[_ngcontent-ng-c2048061549] .nested-nodes[_ngcontent-ng-c2048061549] .cmf-tree-node[_ngcontent-ng-c2048061549] .node-name[_ngcontent-ng-c2048061549]{
+		padding-left: 0;
+	}
+	.nested-nodes mat-tree-node {
+		display: list-item;
+		list-style: circle;
+		margin-left: 4px;
+	}
+	.sub__menu {
+		top: 0 !important;
+		height: calc(100vh - 29px) !important;
+	}
+	.cmf-tree-container.new-mode {
+		padding-top: 0 !important;
+	}
+	#tree-scroll-container {
+		height: calc(100vh - 83px) !important;
+	}
+	.node-settings {
+		margin: 0 0 0 5px !important;
+	}
+	/** /left tree **/
+}
