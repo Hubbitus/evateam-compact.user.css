@@ -7,9 +7,9 @@ Any feedback welcome!
 For Chrome/Chromium browsers I use it in nice [Stylish](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ru) extension.
 For firefox may suggest [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
 
-You may install it from [userstyles.world site](https://userstyles.world/style/24584) in that case updates will be propogated automatically.
+You may install it from [userstyles.world site](https://userstyles.world/style/24584) in that case updates will be propagated automatically.
 
-Alternatively: Just click button "Create style" and copy/paste content of file https://raw.githubusercontent.com/Hubbitus/jira-compact.user.css/master/jira-compact.user.css TODO.
+Alternatively you may just follow the [link](https://github.com/Hubbitus/evateam-compact.user.css/raw/refs/heads/main/evateam-compact.user.css).
 
 ## What it is
 
