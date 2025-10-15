@@ -11,6 +11,8 @@
 	* Main URLs to check against:
 	* - https://eva.gid.team/project/Roadmap/RM-000059#rabota-komandy-po-proektu-mrg
 	* - https://eva.gid.team/project/Task/DEVOPS-8327#grafana-dovesti-do-sostojanija-prigodnogo-dlja-raboty
+	* - https://eva.gid.team/project/Roadmap/RM-000059?obj=Task:GIDMRG-155#razrabotka-poyasnitelnoj-zapiski-tehnicheskogo-proekta - popup task view
+	* - https://eva.gid.team/project/Registry/RGS-000511#trebovanija requirements
 	**/
 
 	[_nghost-ng-c158529743] {
@@ -29,19 +31,20 @@
 	}
 
 	mat-drawer, header.main__menu {
-		height: 32px !important;
+		height: 32px !important; /*???*/
 	}
 	mat-drawer.drawer-header {
 		z-index: 90;
 	}
-	mat-drawer-content.drawer-container, .drawer-container .drawer-content.displaced {
-		height: 100vh !important;
+	mat-drawer-content.drawer-container, .drawer-container .drawer-content.displaced 	 {
+		height: 100%;
 	}
 	mat-drawer-content.mat-drawer-content {
-		margin-top: 0 !important;
-		top: 31px;
-		height: 100vh;
 		z-index: 100;
+	}
+	.drawer-container .drawer-content.displaced {
+		margin-top: 32px !important;
+		height: calc(100vh - 32px) !important;
 	}
 	.page__navigate { /* project name */
 		top: 1px;
@@ -61,16 +64,21 @@
 	.toolbar {
 		position: absolute;
 		right: 0;
-		width: fit-content;
+		width: 100% !important;
 		padding: 0;
 		margin-top: -13px;
+		padding: 0px 10px 5px 10px;
 		z-index: 100;
+		/* background: #a3a8a32e; */
 	}
 	.toolbar .left {
 		padding-top: 0;
 		padding-right: 0px;
 		height: 30px;
 		width: fit-content;
+	}
+	.toolbar .toolbar__right {
+		right: 33px;
 	}
 	.gantt__layout {
 		height: calc(100% - 22px);
@@ -87,7 +95,10 @@
 		margin-top: 0px;
 	}
 	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
-		height: calc(100vh - 3px) !important;
+	/*	height: calc(100vh - 3px) !important; Break layout on requirements! */
+	}
+	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left{
+		height: 100% !important;
 	}
 	.scrollable-block {
 		height: 100% !important;
@@ -129,7 +140,6 @@
 	}
 	.toolbar {
 		top: 12px !important;
-		padding: 0px 20px 5px 28px;
 	}
 	#ganttChartToolbarId.toolbar {
 		top: 0 !important;
@@ -140,9 +150,11 @@
 	.gantt .header {
 		height: 25px !important;
 		width: fit-content;
+		margin-left: 210px;
+		line-height: 1.2;
 	}
-	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
-		padding: 1em;
+	.content .form {
+		padding: 1em 1em 1em 0;
 	}
 	.project-module-sidenav {
 		height: 100%;
@@ -199,7 +211,7 @@
   		margin-bottom: -5px;
 	}
 
-	/** Full width of Task **/
+	/** Full width task page **/
 	.normal-screen {
 		max-width: 100%;
 	}
@@ -218,8 +230,23 @@
 		margin: 1px 0 7px 14px !important;
 		display: contents;
 	}
-	/** /Full width of Task **/
+	/** /Full width task page **/
+	/** Popup task view **/
+	#task-popup-dialog .toolbar {
+		margin: 1px 1px 1px 23px !important;
+  		padding: 2px;
+	}
+	#task-popup-dialog .content {
+		padding: 0 15px 5px 15px;
+	}
+	/** /Popup task view **/
 	/** /Task view **/
+
+	/** Task filters (lists) **/
+	.feed-module {
+		height: calc(100vh - 33px) !important;
+	}
+	/** /Task filters (lists) **/
 
 	/** Roadmap view like https://eva.gid.team/project/Roadmap/RM-000059#rabota-komandy-po-proektu-mrg **/
 	.grid-row {
@@ -262,7 +289,56 @@
 		height: calc(100vh - 83px) !important;
 	}
 	.node-settings {
-		margin: 0 0 0 5px !important;
+		margin: 0 0 0 0px !important;
+	}
+
+	.feed-content-left-menu .left-menu-item-wrapper, .feed-content-left-menu {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.left-favorites__menu__item, .tree-all-tasks .child-node {
+		height: auto !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		line-height: 1.4 !important;
+		overflow: inherit;
+	}
+	.left-favorites__menu__item .left-favorites__menu__item__title, .tree-all-tasks .child-node {
+		list-style: circle !important;
+		display: list-item !important;
+		list-style-position: inside !important;
+	}
+	.left-favorites__menu__item .mark-wrapper, .left-favorites__menu__item .left-favorites__menu__item__title {
+		width: 100% !important;
+		white-space: collapse !important;
+	}
+	.left-favorites__menu__item {
+		padding-right: 0 !important;
+	}
+	.left-favorites__menu__item .content {
+		padding-left: 0 !important;
 	}
 	/** /left tree **/
+
+	/** Docs, requirements **/
+	.tools-wrapper {
+		margin-top: 12px;
+	}
+	.document {
+		padding: 30px 10px 10px 10px;
+	}
+	frm-cmf-req-registry h1 {
+		height: 25px !important;
+		line-height: 1.2;
+		text-align: center;
+	}
+	wg-accordion-crud {
+		margin: 0 !important;
+	}
+	.page-wrapper {
+		padding: 1em;
+	}
+	/** /Docs, requirements **/
 }

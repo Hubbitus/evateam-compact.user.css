@@ -22,3 +22,4 @@ Work distributed under terms of [CC BY - Creative Commons Attribution](http://cr
 
 ## Changelog
 * 2025-10-11 Initial release
+* 2025-10-15 Fix bugs on various places. Made styles context aware
