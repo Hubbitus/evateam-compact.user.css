@@ -21,5 +21,6 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
-* 2025-10-11 Initial release
+* 2025-10-22 Many layout fixes. Left panel, header, documents etc.
 * 2025-10-15 Fix bugs on various places. Made styles context aware
+* 2025-10-11 Initial release

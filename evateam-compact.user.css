@@ -13,6 +13,8 @@
 	* - https://eva.gid.team/project/Task/DEVOPS-8327#grafana-dovesti-do-sostojanija-prigodnogo-dlja-raboty
 	* - https://eva.gid.team/project/Roadmap/RM-000059?obj=Task:GIDMRG-155#razrabotka-poyasnitelnoj-zapiski-tehnicheskogo-proekta - popup task view
 	* - https://eva.gid.team/project/Registry/RGS-000511#trebovanija requirements
+	* - https://eva.gid.team/project/Document/DOC-000059#dokumenty documents main
+	* - https://eva.gid.team/project/Document/DOC-028499#vitrina-datanova-datamart-fct-datanova document example
 	**/
 
 	[_nghost-ng-c158529743] {
@@ -62,42 +64,53 @@
 	}
 
 	.toolbar {
-		position: absolute;
+		position: initial;
 		right: 0;
 		width: 100% !important;
-		padding: 0;
-		margin-top: -13px;
+		margin-top: -5px;
 		padding: 0px 10px 5px 10px;
 		z-index: 100;
 		/* background: #a3a8a32e; */
 	}
 	.toolbar .left {
-		padding-top: 0;
+		padding-top: 22px;
+		position: fixed;
 		padding-right: 0px;
 		height: 30px;
 		width: fit-content;
+		z-index: 50;
 	}
 	.toolbar .toolbar__right {
-		right: 33px;
+		right: 33px !important;
+		top: -6px !important;
+	}
+	#task-popup-dialog .toolbar__right {
+		right: 15px !important;
+		top: 6px !important;
 	}
 	.gantt__layout {
 		height: calc(100% - 22px);
 	}
-	[_nghost-ng-c758184429] .gantt__layout__tree[_ngcontent-ng-c758184429], .gantt__layout__chart, .resize-controller-x-gantt {
+	.gantt__header {
+		margin-top: -3px !important;
+	}
+	.gantt__layout__tree, .gantt__layout__chart, .resize-controller-x-gantt {
 		height: calc(100% + 45px);
 	}
-
+	.mat-icon-button {
+		line-height: 36px;
+	}
 	.cmf-tree[_ngcontent-ng-c2048061549] .cmf-tree-node[_ngcontent-ng-c2048061549] .node-name-item[_ngcontent-ng-c2048061549] {
 		display: contents;
 	}
 
 	.project-module {
-		margin-top: 0px;
+		margin-top: -10px;
 	}
 	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
 	/*	height: calc(100vh - 3px) !important; Break layout on requirements! */
 	}
-	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left{
+	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left {
 		height: 100% !important;
 	}
 	.scrollable-block {
@@ -116,6 +129,10 @@
 		display: inline list-item;
 		margin: 0;
 	}
+	.mat-tree-node .node-settings {
+		width: 9px !important;
+		height: 20ox !important;
+	}
 	/* Compact chapters */
 	.cmf-tree-container.new-mode[_ngcontent-ng-c158529743] .iconed-node[_ngcontent-ng-c158529743] {
 		margin: 0;
@@ -126,6 +143,11 @@
 	.cmf-tree[_ngcontent-ng-c158529743] .nested-nodes[_ngcontent-ng-c158529743] .cmf-tree-node[_ngcontent-ng-c158529743] .node-name[_ngcontent-ng-c158529743] {
   		padding-left: 0;
 	}
+
+	.project-module-sidenav.displaced, #tree-scroll-container {
+		height: calc(100vh - 85px) !important;
+	}
+	#tree-scroll-container
 	/** /Tree of docs at left **/
 
 	/** Fix task No truncation in Task links list **/
@@ -139,7 +161,8 @@
 		padding: 0 !important;
 	}
 	.toolbar {
-		top: 12px !important;
+		top: 7px !important;
+		margin-left: 0 !important;
 	}
 	#ganttChartToolbarId.toolbar {
 		top: 0 !important;
@@ -148,13 +171,16 @@
 		padding: 0 5px !important;
 	}
 	.gantt .header {
-		height: 25px !important;
+		height: 20px !important;
 		width: fit-content;
 		margin-left: 210px;
 		line-height: 1.2;
 	}
-	.content .form {
-		padding: 1em 1em 1em 0;
+	.content .form { /* main task view - full screen */
+		padding: 0em 0.5em 0em 1em !important;
+	}
+	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
+		padding: 1em 10px 1em 0 !important;
 	}
 	.project-module-sidenav {
 		height: 100%;
@@ -203,12 +229,13 @@
 		margin-top: 2px;
 	}
 	.form__title {
-		margin-block: 0.5em !important;
+		/*margin-block: 0.5em !important;*/
+		margin: -8px 0 1px 0 !important;
 		text-shadow: 1px 2px 5px #0745a6;
 	}
 	.form-header-tags {
-		margin-top: 5px;
-  		margin-bottom: -5px;
+		margin-top: -5px;
+  		margin-bottom: 8px;
 	}
 
 	/** Full width task page **/
@@ -233,11 +260,15 @@
 	/** /Full width task page **/
 	/** Popup task view **/
 	#task-popup-dialog .toolbar {
-		margin: 1px 1px 1px 23px !important;
-  		padding: 2px;
+		margin: 0px 0px 0px 5px !important;
+  		padding: 0px;
+		position: initial;
 	}
 	#task-popup-dialog .content {
-		padding: 0 15px 5px 15px;
+		padding: 0 10px 5px 10px;
+	}
+	#task-popup-dialog frm-task .content .content__left {
+		padding-top: 0 !important;
 	}
 	/** /Popup task view **/
 	/** /Task view **/
@@ -267,10 +298,11 @@
 	/** /Roadmap view **/
 
 	/** left tree **/
-	.cmf-tree[_ngcontent-ng-c2048061549] .overflow-ellipsis[_ngcontent-ng-c2048061549] .node-name-item[_ngcontent-ng-c2048061549] > span[_ngcontent-ng-c2048061549]{
-		white-space: normal;
+	.cmf-tree .overflow-ellipsis .node-name-item > span {
+		white-space: normal !important;
+		hyphens: auto;
 	}
-	.cmf-tree[_ngcontent-ng-c2048061549] .nested-nodes[_ngcontent-ng-c2048061549] .cmf-tree-node[_ngcontent-ng-c2048061549] .node-name[_ngcontent-ng-c2048061549]{
+	.cmf-tree .nested-nodes .cmf-tree-node .node-name {
 		padding-left: 0;
 	}
 	.nested-nodes mat-tree-node {
@@ -281,12 +313,14 @@
 	.sub__menu {
 		top: 0 !important;
 		height: calc(100vh - 29px) !important;
+		/* overflow: auto; /* scrollbars at left. TODO break mouse resizing */
+		scrollbar-width: thin;
 	}
 	.cmf-tree-container.new-mode {
 		padding-top: 0 !important;
 	}
 	#tree-scroll-container {
-		height: calc(100vh - 83px) !important;
+		/* height: calc(100vh - 83px) !important; */
 	}
 	.node-settings {
 		margin: 0 0 0 0px !important;
@@ -309,10 +343,12 @@
 		list-style: circle !important;
 		display: list-item !important;
 		list-style-position: inside !important;
+		max-width: 100% !important;
 	}
 	.left-favorites__menu__item .mark-wrapper, .left-favorites__menu__item .left-favorites__menu__item__title {
 		width: 100% !important;
 		white-space: collapse !important;
+		hyphens: auto;
 	}
 	.left-favorites__menu__item {
 		padding-right: 0 !important;
@@ -320,9 +356,34 @@
 	.left-favorites__menu__item .content {
 		padding-left: 0 !important;
 	}
+	.favorites-rest-wrapper {
+		overflow: auto !important;
+		scrollbar-width: thin;
+		padding-bottom: 1em;
+	}
 	/** /left tree **/
 
 	/** Docs, requirements **/
+	frm-cmf-breadcrumbs, frm-cmf-breadcrumbs .info-item {
+		height: 17px !important;
+		padding: 0 !important;
+	}
+	.toolbar .left .info-item {
+		padding-top: 0 !important;
+		top: -5px;
+	}
+	.toolbar .left .info {
+		top: 10px;
+	}
+	.breadcrumbs.breadcrumbs-toolbar {
+		border-bottom: 1px dotted;
+	}
+
+	body:has(.document) .toolbar .left /* ".toolbar .left" document workaround. Unfortunately frm-cmf-document is not parent :( */ {
+		padding-top: 0 !important;
+		margin-top: -40px !important;
+	}
+
 	.tools-wrapper {
 		margin-top: 12px;
 	}
@@ -340,5 +401,11 @@
 	.page-wrapper {
 		padding: 1em;
 	}
+
+	/*** Docs ***/
+	.document .header {
+		padding-top: 17px;
+	}
+	/*** /Docs ***/
 	/** /Docs, requirements **/
 }
