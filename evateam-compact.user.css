@@ -73,12 +73,11 @@
 		/* background: #a3a8a32e; */
 	}
 	.toolbar .left {
-		margin-top: 9px;
-		position: fixed;
-		padding-right: 0px;
-		height: 30px;
-		width: fit-content;
 		z-index: 50;
+		margin-top: -3px;
+		width: fit-content;
+		padding-right: 0px;
+		height: 32px;
 	}
 	.toolbar .toolbar__right {
 		right: 33px !important;
@@ -105,7 +104,7 @@
 	}
 
 	body:has(.gantt) .project-module {
-		margin-top: -10px;
+		margin-top: -26px;
 	}
 	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
 	/*	height: calc(100vh - 3px) !important; Break layout on requirements! */
@@ -147,11 +146,10 @@
 	.project-module-sidenav.displaced, #tree-scroll-container {
 		height: calc(100vh - 85px) !important;
 	}
-	#tree-scroll-container
 	/** /Tree of docs at left **/
 
 	/** Fix task No truncation in Task links list **/
-	.item-link[_ngcontent-ng-c422728019] {
+	.item-link {
 		overflow: visible;
 	}
 
@@ -252,6 +250,7 @@
 		margin: 0 !important;
 		width: 100%;
 		display: flex;
+		height: 25px;
 	}
 	.toolbar.full {
 		margin: 1px 0 7px 14px !important;
@@ -368,17 +367,23 @@
 		height: 17px !important;
 		padding: 0 !important;
 	}
+	.toolbar .left .info {
+		top: 3px;
+		height: 25px;
+		background: transparent;
+	}
 	.toolbar .left .info-item {
 		padding-top: 0 !important;
 		top: -5px;
-	}
-	.toolbar .left .info {
-		top: 10px;
+		height: 25px;
 	}
 	.breadcrumbs.breadcrumbs-toolbar {
 		border-bottom: 1px dotted;
 	}
-
+	.reference {
+		height: 20px !important;
+		margin-top: 0 !important;
+	}
 	.tools-wrapper {
 		margin-top: 12px;
 	}
@@ -394,12 +399,12 @@
 		margin: 0 !important;
 	}
 	.page-wrapper {
-		padding: 1em;
+		margin: 1em !important;
 	}
 
 	/*** Docs ***/
 	.document .header {
-		padding-top: 17px;
+		margin-top: -4px;
 	}
 	/*** /Docs ***/
 	/** /Docs, requirements **/
