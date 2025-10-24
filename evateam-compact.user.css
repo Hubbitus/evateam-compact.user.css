@@ -73,7 +73,7 @@
 		/* background: #a3a8a32e; */
 	}
 	.toolbar .left {
-		padding-top: 22px;
+		margin-top: 9px;
 		position: fixed;
 		padding-right: 0px;
 		height: 30px;
@@ -104,7 +104,7 @@
 		display: contents;
 	}
 
-	.project-module {
+	body:has(.gantt) .project-module {
 		margin-top: -10px;
 	}
 	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
@@ -377,11 +377,6 @@
 	}
 	.breadcrumbs.breadcrumbs-toolbar {
 		border-bottom: 1px dotted;
-	}
-
-	body:has(.document) .toolbar .left /* ".toolbar .left" document workaround. Unfortunately frm-cmf-document is not parent :( */ {
-		padding-top: 0 !important;
-		margin-top: -40px !important;
 	}
 
 	.tools-wrapper {
