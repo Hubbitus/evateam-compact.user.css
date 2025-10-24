@@ -17,13 +17,15 @@
 	* - https://eva.gid.team/project/Document/DOC-028499#vitrina-datanova-datamart-fct-datanova document example
 	**/
 
-	[_nghost-ng-c158529743] {
+	[_nghost-ng-c2048061549] {
 		--node-min-height: 20px !important;
 		--tree-margin-top: 0 !important;
 		--new-mode-tree-node-padding-left: 0 !important;
 		--nested-nodes-first-level-padding-left: 29px !important;
 		--node-settings-margin: 0 !important;
 		--nested-nodes-name-item-margin: 0 !important;
+
+		--default-line-height: 20px !important;
 	}
 
 	/** Top header **/
@@ -99,9 +101,6 @@
 	.mat-icon-button {
 		line-height: 36px;
 	}
-	.cmf-tree[_ngcontent-ng-c2048061549] .cmf-tree-node[_ngcontent-ng-c2048061549] .node-name-item[_ngcontent-ng-c2048061549] {
-		display: contents;
-	}
 
 	body:has(.gantt) .project-module {
 		margin-top: -26px;
@@ -119,32 +118,69 @@
 
 	/** Tree of docs at left **/
 	/* Tree of docs at left: Break long doc names in left tree */
-	.cmf-tree[_ngcontent-ng-c158529743] .overflow-ellipsis[_ngcontent-ng-c158529743] .node-name-item[_ngcontent-ng-c158529743] > span[_ngcontent-ng-c158529743] {
+	.cmf-tree .overflow-ellipsis .node-name-item > span {
 		white-space: break-spaces;
 		line-height: 0.9;
 	}
 	/* Tree of docs at left: list items */
-	.cmf-tree[_ngcontent-ng-c158529743] .cmf-tree-node[_ngcontent-ng-c158529743] .node-name-item[_ngcontent-ng-c158529743] {
-		display: inline list-item;
-		margin: 0;
-	}
-	.mat-tree-node .node-settings {
-		width: 9px !important;
-		height: 20ox !important;
+	.sub__menu {
+		top: 0 !important;
+		height: calc(100vh - 29px) !important;
+		/* overflow: auto; /* scrollbars at left. TODO break mouse resizing */
+		scrollbar-width: thin;
 	}
 	/* Compact chapters */
-	.cmf-tree-container.new-mode[_ngcontent-ng-c158529743] .iconed-node[_ngcontent-ng-c158529743] {
-		margin: 0;
-	}
-	mat-tree-node, mat-tree-node a {
-		min-height: 10px !important;
-	}
-	.cmf-tree[_ngcontent-ng-c158529743] .nested-nodes[_ngcontent-ng-c158529743] .cmf-tree-node[_ngcontent-ng-c158529743] .node-name[_ngcontent-ng-c158529743] {
-  		padding-left: 0;
-	}
-
 	.project-module-sidenav.displaced, #tree-scroll-container {
 		height: calc(100vh - 85px) !important;
+	}
+	.cmf-tree-container.new-mode {
+		padding-top: 0 !important;
+	}
+	.node-settings { /* node 3 dots right menu */
+		margin: 0 0 0 0px !important;
+	}
+	.confluence-tree-footer {
+		margin-top: 0 !important;
+	}
+
+	/* show list bullets */
+	.cmf-tree-container mat-nested-tree-node .nested-nodes mat-tree-node a .node-name .node-name-item /* main items */
+	,.tree-all-tasks .wrap .child-node > span:first-child /* tasks on desk e.g. https://eva.gid.team/desk/Task/SECR-18 */
+	,.favorites .left-favorites__menu__item .mark-wrapper /* favorites left menu e.g. https://eva.gid.team/desk/favorites/all */
+	{ /* nested tree items: level 2, 3... */
+		display: list-item !important;
+		list-style: circle outside !important;
+		margin: 0 0 0 4px !important;
+	}
+	.cmf-tree .nested-nodes .node-name {
+		padding-left: 12px !important;
+	}
+
+	/* wrap lines */
+	.cmf-tree .overflow-ellipsis .node-name, .cmf-tree .overflow-ellipsis .node-name-item, .cmf-tree .overflow-ellipsis .node-name-item > span { /* items word-wrapping */
+		line-height: 1.2;
+		overflow-wrap: break-word !important;
+		hyphens: auto !important;
+		overflow: visible !important;
+		white-space: wrap !important;
+		text-wrap: pretty;
+	}
+
+	app-cmf-icon { /* always show icons of "all tasks", desks and so on (https://eva.gid.team/desk/Task/SECR-18) */
+		visibility: visible !important;
+	}
+
+	/* favorites */
+	.tree-all-tasks .wrap .child-node {
+		height: 17px !important;
+	}
+	.left-menu-item {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.favorites .left-favorites__menu__item {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 	}
 	/** /Tree of docs at left **/
 
@@ -233,7 +269,7 @@
 	}
 	.form-header-tags {
 		margin-top: -5px;
-  		margin-bottom: 8px;
+		margin-bottom: 8px;
 	}
 
 	/** Full width task page **/
@@ -260,7 +296,7 @@
 	/** Popup task view **/
 	#task-popup-dialog .toolbar {
 		margin: 0px 0px 0px 5px !important;
-  		padding: 0px;
+		padding: 0px;
 		position: initial;
 	}
 	#task-popup-dialog .content {
@@ -295,72 +331,6 @@
 		margin-top: -2px;
 	}
 	/** /Roadmap view **/
-
-	/** left tree **/
-	.cmf-tree .overflow-ellipsis .node-name-item > span {
-		white-space: normal !important;
-		hyphens: auto;
-	}
-	.cmf-tree .nested-nodes .cmf-tree-node .node-name {
-		padding-left: 0;
-	}
-	.nested-nodes mat-tree-node {
-		display: list-item;
-		list-style: circle;
-		margin-left: 4px;
-	}
-	.sub__menu {
-		top: 0 !important;
-		height: calc(100vh - 29px) !important;
-		/* overflow: auto; /* scrollbars at left. TODO break mouse resizing */
-		scrollbar-width: thin;
-	}
-	.cmf-tree-container.new-mode {
-		padding-top: 0 !important;
-	}
-	#tree-scroll-container {
-		/* height: calc(100vh - 83px) !important; */
-	}
-	.node-settings {
-		margin: 0 0 0 0px !important;
-	}
-
-	.feed-content-left-menu .left-menu-item-wrapper, .feed-content-left-menu {
-		padding: 0 !important;
-		margin: 0 !important;
-	}
-	.left-favorites__menu__item, .tree-all-tasks .child-node {
-		height: auto !important;
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
-		line-height: 1.4 !important;
-		overflow: inherit;
-	}
-	.left-favorites__menu__item .left-favorites__menu__item__title, .tree-all-tasks .child-node {
-		list-style: circle !important;
-		display: list-item !important;
-		list-style-position: inside !important;
-		max-width: 100% !important;
-	}
-	.left-favorites__menu__item .mark-wrapper, .left-favorites__menu__item .left-favorites__menu__item__title {
-		width: 100% !important;
-		white-space: collapse !important;
-		hyphens: auto;
-	}
-	.left-favorites__menu__item {
-		padding-right: 0 !important;
-	}
-	.left-favorites__menu__item .content {
-		padding-left: 0 !important;
-	}
-	.favorites-rest-wrapper {
-		overflow: auto !important;
-		scrollbar-width: thin;
-		padding-bottom: 1em;
-	}
-	/** /left tree **/
 
 	/** Docs, requirements **/
 	frm-cmf-breadcrumbs, frm-cmf-breadcrumbs .info-item {
