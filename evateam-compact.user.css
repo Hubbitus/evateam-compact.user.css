@@ -133,6 +133,7 @@
 		height: calc(100vh - 29px) !important;
 		/* overflow: auto; /* scrollbars at left. TODO break mouse resizing */
 		scrollbar-width: thin;
+		margin-left: -17px !important;
 	}
 	/* Compact chapters */
 	.project-module-sidenav.displaced, #tree-scroll-container {
