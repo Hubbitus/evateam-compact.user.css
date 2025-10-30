@@ -28,6 +28,11 @@
 		--default-line-height: 20px !important;
 	}
 
+	html {
+		--menu-padding-right: 0px !important;
+		--feed-content-margin-left: 0 !important;
+	}
+
 	/** Top header **/
 	.project-content {
 		padding: 0 !important;
@@ -151,19 +156,22 @@
 		display: list-item !important;
 		list-style: circle outside !important;
 		margin: 0 0 0 4px !important;
+		width: 100% !important;
 	}
 	.cmf-tree .nested-nodes .node-name {
 		padding-left: 12px !important;
 	}
 
 	/* wrap lines */
-	.cmf-tree .overflow-ellipsis .node-name, .cmf-tree .overflow-ellipsis .node-name-item, .cmf-tree .overflow-ellipsis .node-name-item > span { /* items word-wrapping */
+	.cmf-tree .overflow-ellipsis .node-name, .cmf-tree .overflow-ellipsis .node-name-item, .cmf-tree .overflow-ellipsis .node-name-item > span, .left-favorites__menu__item__title { /* items word-wrapping */
 		line-height: 1.2;
 		overflow-wrap: break-word !important;
 		hyphens: auto !important;
 		overflow: visible !important;
 		white-space: wrap !important;
 		text-wrap: pretty;
+		width: 100% !important;
+		max-width: 100% !important;
 	}
 
 	app-cmf-icon { /* always show icons of "all tasks", desks and so on (https://eva.gid.team/desk/Task/SECR-18) */
@@ -181,6 +189,10 @@
 	.favorites .left-favorites__menu__item {
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
+		padding-right: 0 !important;
+	}
+	.favorites .left-favorites__menu__item .context {
+		padding-left: 0 !important;
 	}
 	/** /Tree of docs at left **/
 

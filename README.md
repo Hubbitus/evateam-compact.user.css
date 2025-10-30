@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2025-10-30 Left menu adjust padding (including favorites)
 * 2025-10-25 Restyle left panel tree
 * 2025-10-24 Fix header on all types of documents!
 * 2025-10-24 Fix project module top padding
