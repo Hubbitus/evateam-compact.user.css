@@ -197,9 +197,12 @@
 	}
 	/** /Tree of docs at left **/
 
-	/** Fix task No truncation in Task links list **/
+	/** Fix task code truncation in tasks links list **/
+	wg-related-req-object .line-req {
+		grid-template-columns: max-content auto auto auto auto auto !important;
+	}
 	.item-link {
-		overflow: visible;
+		overflow: visible !important;
 	}
 
 	/** Task view **/

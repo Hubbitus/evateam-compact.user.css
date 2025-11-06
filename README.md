@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2025-11-07 Fix task code truncation in tasks links list
 * 2025-10-31 Remove empty space at left menu
 * 2025-10-30 Left menu adjust padding (including favorites)
 * 2025-10-25 Restyle left panel tree
