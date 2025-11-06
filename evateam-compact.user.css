@@ -206,7 +206,7 @@
 	}
 
 	/** Task view **/
-	h1, h2, h3, h4, h5, h6, p, wg-field, .expansion-panel-header, .wrapper__right, .content__full, .mode-list, .mode-gantt, .project-module-sidenav, div.content-item /*, .form__title*/, .app-comment-form {
+	h1, h2, h3, h4, h5, h6, p, wg-field, .expansion-panel-header, .wrapper__right, .content__full, .mode-list, .mode-gantt, .project-module-sidenav, div.content-item:not(.task-result), .app-comment-form {
 		margin: 0 !important;
 		padding: 0 !important;
 	}
@@ -235,9 +235,19 @@
 	.project-module-sidenav {
 		height: 100%;
 	}
-	.crud__group__wrapper {
+	.crud__group__wrapper, .task-result {
 		border: 1px solid lightgrey;
 		border-radius: 5px;
+	}
+	.crud__group__wrapper h2, .task-result h2 { /* Description and result headers */
+		width: max-content;
+		border-right: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		border-radius: 5px 0 5px 0 !important;
+		background: #d3d3d35c;
+	}
+	.task-result {
+		margin-top: 5px !important;
 	}
 	[_nghost-ng-c1144403715] .expansion-panel-header[_ngcontent-ng-c1144403715] {
 		height: auto;
