@@ -208,6 +208,8 @@
 	}
 	.item-link {
 		overflow: visible !important;
+		white-space: normal !important;
+		hyphens: auto;
 	}
 
 	/** Task view **/
