@@ -306,6 +306,9 @@
 		background: #5555550f;
 		border: 0;
 	}
+	.mce-content-body pre { /* Fix code to use mono font */
+		font-family: "Latin modern mono","Andale mono","Courier new" !important;
+	}
 
 	/** Full width task page **/
 	.normal-screen {
