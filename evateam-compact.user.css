@@ -64,10 +64,15 @@
 		width: auto !important;
 		height: 29px;
 		border-radius: 5px;
+		display: flex;
+		align-items: center;
 	}
 	.page__navigate .hamburger, .page__navigate .hamburger app-cmf-navigate-panel, .page__navigate .hamburger .navigate__selected__item {
 		margin: 0 !important;
 		padding: 0 !important;
+	}
+	.page__navigate .hamburger .navigate__selected__item .selected__item__title {
+		display: contents !important;
 	}
 
 	.toolbar {
@@ -296,6 +301,10 @@
 	.form-header-tags {
 		margin-top: -5px;
 		margin-bottom: 8px;
+	}
+	.mce-content-body a.wiki-card-text { /* Other content links (tasks, wiki documents etc) */
+		background: #5555550f;
+		border: 0;
 	}
 
 	/** Full width task page **/
