@@ -266,8 +266,9 @@
 	.expansion-panel-header::before {
 		display: none;
 	}
-	.expansion-panel-header .header {
+	.expansion-panel-header .header, .expansion-panel-header .group-header {
 		padding-left: 1em;
+		line-height: 7px !important;
 	}
 	.expansion-panel-content {
 		margin-top: -11px;
