@@ -119,10 +119,10 @@
 	/*	height: calc(100vh - 3px) !important; Break layout on requirements! */
 	}
 	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left {
-		height: 100% !important;
+		height: 100vh !important;
 	}
 	.scrollable-block {
-		height: 100% !important;
+		overflow-y: auto;
 	}
 	/** /Top header **/
 
@@ -268,7 +268,7 @@
 	}
 	.expansion-panel-header .header, .expansion-panel-header .group-header {
 		padding-left: 1em;
-		line-height: 7px !important;
+		line-height: 20px !important;
 	}
 	.expansion-panel-content {
 		margin-top: -11px;
@@ -416,6 +416,12 @@
 	/*** Docs ***/
 	.document .header {
 		margin-top: -4px;
+	}
+
+	app-cmf-document-editor .tox:not(.tox-tinymce-inline) .tox-editor-header { /* Editor panel */
+		box-shadow: -4px 4px 8px 8px rgba(34, 60, 80, 0.2);
+		right: 0;
+		top: 32px !important;
 	}
 	/*** /Docs ***/
 	/** /Docs, requirements **/
