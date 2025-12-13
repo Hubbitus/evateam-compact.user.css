@@ -57,7 +57,7 @@
 	}
 	.page__navigate { /* project name */
 		top: 1px;
-		left: 750px;
+		right: 590px;
 		background: lightgoldenrodyellow;
 		z-index: 120;
 		opacity: 0.8;
@@ -123,6 +123,7 @@
 	}
 	.scrollable-block {
 		overflow-y: auto;
+		height: 100% !important;
 	}
 	/** /Top header **/
 
@@ -425,4 +426,52 @@
 	}
 	/*** /Docs ***/
 	/** /Docs, requirements **/
+
+	/** Kanban board **/
+	.kanban-wrapper .upper, .kanban-wrapper .rows-container, .kanban-wrapper .kanban-row, .kanban-wrapper .wrap-plan-dates, .kanban-wrapper .mat-form-field-wrapper,
+	.kanban-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix, .kanban-wrapper .swimlane__control, .kanban-wrapper .main-kanban .kanban__titles .kanban__column,
+	.kanban-wrapper .main-kanban .kanban__titles .kanban__column .column__title {
+		padding: 0 !important;
+		margin: 0 !important;
+		border: 0 !important;
+	}
+	.kanban-wrapper {
+		height: calc(100vh - 30px) !important;
+		scrollbar-width: thin;
+	}
+	.kanban-wrapper .description__content {
+		float: left;
+	}
+	.kanban-wrapper .wrap-plan-dates {
+		float: right;
+	}
+	.kanban-wrapper .quick-filters {
+		gap: 2px !important;
+		padding-top: 5px !important;
+	}
+	.kanban-wrapper .quick-filters .button {
+		padding: 0 1px !important;
+		line-height: inherit !important;
+	}
+	.kanban-wrapper .mat-form-field-label-wrapper {
+		top: -14px;
+		padding-top: 18px;
+	}
+	.kanban-wrapper .main-kanban .kanban__titles .kanban__column .column__title {
+		height: 23px !important;
+		padding: 0 4px !important;
+	}
+	.kanban-wrapper .description__text {
+		position: relative;
+		top: 10px;
+	}
+
+	.kanban-wrapper .kanban__titles, .kanban-wrapper .kanban {
+		gap: 3px !important;
+	}
+	.kanban-wrapper .card {
+		margin-top: 2px !important;
+		padding: 3px;
+	}
+	/** /Kanban board **/
 }
