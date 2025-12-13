@@ -471,7 +471,22 @@
 	}
 	.kanban-wrapper .card {
 		margin-top: 2px !important;
-		padding: 3px;
+		padding: 2px 2px 2px 8px;
 	}
+
+	/* Cards: */
+	.cdk-drag-preview .card__left .card-info .card-tags .card-tag, .card .card__left .card-info .card-tags .card-tag {
+		height: 16px !important;
+	}
+	.cdk-drag-preview .card__left .card-info .card-tags .card-tag span, .card .card__left .card-info .card-tags .card-tag span {
+		padding: 0 2px !important;
+	}
+	.cdk-drag-preview .card__left .card-info .card-tags, .card .card__left .card-info .card-tags {
+		gap: 2px !important;
+	}
+	.cdk-drag-preview .card__left, .card .card__left {
+		gap: 0 !important;
+	}
+	/* Cards/ */
 	/** /Kanban board **/
 }
