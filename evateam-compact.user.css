@@ -240,6 +240,7 @@
 	}
 	.content .form { /* main task view - full screen */
 		padding: 0em 0.5em 0em 1em !important;
+		margin-right: 0.5em;
 	}
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
 		padding: 1em 10px 1em 0 !important;
@@ -302,6 +303,9 @@
 		border: 1px solid var(--expansion-panel-border-color);
 		margin-top: 2px;
 	}
+	.content__right-wrapper {
+		margin: 0 !important;
+	}
 	.form__title {
 		/*margin-block: 0.5em !important;*/
 		margin: -8px 0 1px 0 !important;
@@ -321,7 +325,10 @@
 
 	wg-related-task-object .line-subtask {
 		/* grid-template-columns: 100px minmax(50px, 1fr) 124px 28px 14px 24px; */
-		grid-template-columns: max-content auto max-content 28px max-content 20px !important;
+		grid-template-columns: max-content auto max-content 28px max-content 24px !important;
+	}
+	wg-related-task-object .delete-icon {
+		right: 24px !important;
 	}
 
 	/** Full width task page **/
