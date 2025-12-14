@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2025-12-14 Style all blocks in task
 * 2025-12-13 Style kanban board
 * 2025-11-18 Fix document editing scrolling and edit panel placement
 * 2025-11-13 Add styling for group-header too (right panel)

@@ -31,6 +31,7 @@
 	html {
 		--menu-padding-right: 0px !important;
 		--feed-content-margin-left: 0 !important;
+		--tui-padding-s: 0 !important;
 	}
 
 	/** Top header **/
@@ -211,6 +212,9 @@
 		overflow: visible !important;
 		white-space: normal !important;
 		hyphens: auto;
+		font-size: 90%;
+		display: inline-block;
+		line-height: 13px;
 	}
 
 	/** Task view **/
@@ -243,11 +247,12 @@
 	.project-module-sidenav {
 		height: 100%;
 	}
-	.crud__group__wrapper, .task-result {
+	.crud__group__wrapper, .task-result, app-subtask-related-task, frm-task div:has(.activity-title) { /* Task blocks like "Описание", "Дочерние задачи", "Связанные задачи", "Активность" */
+		margin-top: 5px !important;
 		border: 1px solid lightgrey;
 		border-radius: 5px;
 	}
-	.crud__group__wrapper h2, .task-result h2 { /* Description and result headers */
+	.crud__group__wrapper h2, .task-result h2, app-subtask-related-task .group-title, .activity-title { /* Description and result headers */
 		width: max-content;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
@@ -314,6 +319,11 @@
 		font-family: "Latin modern mono","Andale mono","Courier new" !important;
 	}
 
+	wg-related-task-object .line-subtask {
+		/* grid-template-columns: 100px minmax(50px, 1fr) 124px 28px 14px 24px; */
+		grid-template-columns: max-content auto max-content 28px max-content 20px !important;
+	}
+
 	/** Full width task page **/
 	.normal-screen {
 		max-width: 100%;
@@ -336,6 +346,15 @@
 	}
 	/** /Full width task page **/
 	/** Popup task view **/
+	#task-popup-dialog {
+		border-radius: 10px !important;
+		inset: 4em;
+		max-width: fit-content;
+		width: auto;
+		height: auto;
+		max-height: fit-content;
+	}
+
 	#task-popup-dialog .toolbar {
 		margin: 0px 0px 0px 5px !important;
 		padding: 0px;
@@ -346,6 +365,13 @@
 	}
 	#task-popup-dialog frm-task .content .content__left {
 		padding-top: 0 !important;
+	}
+
+	frm-task-tabs .tabs, app-subtask-related-task .groups-list-title {
+		margin: 0 !important;
+	}
+	app-subtask-related-task {
+		margin: 5px 0 0 0 !important;
 	}
 	/** /Popup task view **/
 	/** /Task view **/
