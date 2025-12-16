@@ -17,7 +17,7 @@
 	* - https://eva.gid.team/project/Document/DOC-028499#vitrina-datanova-datamart-fct-datanova document example
 	**/
 
-	[_nghost-ng-c2048061549] {
+	[_nghost-ng-c2545820640] {
 		--node-min-height: 20px !important;
 		--tree-margin-top: 0 !important;
 		--new-mode-tree-node-padding-left: 0 !important;
@@ -26,6 +26,9 @@
 		--nested-nodes-name-item-margin: 0 !important;
 
 		--default-line-height: 20px !important;
+	}
+	[_nghost-ng-c2160805558] {
+		gap: 0;
 	}
 
 	html {
@@ -243,22 +246,26 @@
 		margin-right: 0.5em;
 	}
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
-		padding: 1em 10px 1em 0 !important;
+		padding: 5px !important;
 	}
 	.project-module-sidenav {
 		height: 100%;
 	}
 	.crud__group__wrapper, .task-result, app-subtask-related-task, frm-task div:has(.activity-title) { /* Task blocks like "Описание", "Дочерние задачи", "Связанные задачи", "Активность" */
-		margin-top: 5px !important;
+		/* margin-top: 5px !important; */
 		border: 1px solid lightgrey;
 		border-radius: 5px;
+		padding: 5px;
 	}
-	.crud__group__wrapper h2, .task-result h2, app-subtask-related-task .group-title, .activity-title { /* Description and result headers */
+	.crud__group__wrapper h2:first-child, .task-result h2:first-child, app-subtask-related-task .group-title, .activity-title { /* Description and result headers */
 		width: max-content;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
 		border-radius: 5px 0 5px 0 !important;
 		background: #d3d3d35c;
+		position: relative;
+		top: -5px;
+		left: -5px;
 	}
 	.task-result {
 		margin-top: 5px !important;
@@ -303,13 +310,16 @@
 		border: 1px solid var(--expansion-panel-border-color);
 		margin-top: 2px;
 	}
-	.content__right-wrapper {
+	.content__right-wrapper, .content__right {
 		margin: 0 !important;
 	}
 	.form__title {
 		/*margin-block: 0.5em !important;*/
 		margin: -8px 0 1px 0 !important;
 		text-shadow: 1px 2px 5px #0745a6;
+	}
+	.form__title .inline-edit-button {
+		height: 33px;
 	}
 	.form-header-tags {
 		margin-top: -5px;
@@ -326,6 +336,9 @@
 	wg-related-task-object .line-subtask {
 		/* grid-template-columns: 100px minmax(50px, 1fr) 124px 28px 14px 24px; */
 		grid-template-columns: max-content auto max-content 28px max-content 24px !important;
+		gap: 1px !important;
+		height: 26px !important;
+		min-height: 22px !important;
 	}
 	wg-related-task-object .delete-icon {
 		right: 24px !important;
@@ -368,7 +381,7 @@
 		position: initial;
 	}
 	#task-popup-dialog .content {
-		padding: 0 10px 5px 10px;
+		padding: 5px;
 	}
 	#task-popup-dialog frm-task .content .content__left {
 		padding-top: 0 !important;
@@ -486,6 +499,9 @@
 		padding: 0 1px !important;
 		line-height: inherit !important;
 	}
+	.kanban-wrapper .rows-container .quick-filters-panel-wrapper {
+		margin-bottom: 0 !important;
+	}
 	.kanban-wrapper .mat-form-field-label-wrapper {
 		top: -14px;
 		padding-top: 18px;
@@ -521,5 +537,21 @@
 		gap: 0 !important;
 	}
 	/* Cards/ */
+
+	/** Implied installed and enabled HuEvaLinks **/
+	wg-kanban-card .task-links {
+		align-items: start !important;
+	}
+	wg-kanban-card .hueva-direct-link {
+		position: absolute;
+		right: 10px;
+		margin-top: -3px !important;
+		z-index: 2;
+	}
+	wg-kanban-card .hueva-copy-btn {
+		position: absolute;
+		right: -5px;
+		margin-top: -3px !important;
+	}
 	/** /Kanban board **/
 }
