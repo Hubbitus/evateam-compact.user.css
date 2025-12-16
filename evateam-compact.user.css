@@ -35,6 +35,7 @@
 		--menu-padding-right: 0px !important;
 		--feed-content-margin-left: 0 !important;
 		--tui-padding-s: 0 !important;
+		--default-line-height: 90% !important;
 	}
 
 	/** Top header **/
@@ -242,7 +243,6 @@
 		line-height: 1.2;
 	}
 	.content .form { /* main task view - full screen */
-		padding: 0em 0.5em 0em 1em !important;
 		margin-right: 0.5em;
 	}
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
@@ -267,6 +267,10 @@
 		top: -5px;
 		left: -5px;
 	}
+	.tasks-list-title:after {
+		content: ":";
+		margin-left: -4px;
+	}
 	.task-result {
 		margin-top: 5px !important;
 	}
@@ -276,6 +280,7 @@
 	.expansion-panel-header {
 		border: 1px solid var(--expansion-panel-border-color);
 		border-radius: 20px;
+		top: -6px;
 	}
 	.expansion-panel-header::before {
 		display: none;
@@ -315,10 +320,10 @@
 	}
 	.form__title {
 		/*margin-block: 0.5em !important;*/
-		margin: -8px 0 1px 0 !important;
+		margin: 0px 0 1px 0 !important;
 		text-shadow: 1px 2px 5px #0745a6;
 	}
-	.form__title .inline-edit-button {
+	.form__title .inline-edit-button, .form__title .inline-edit {
 		height: 33px;
 	}
 	.form-header-tags {
@@ -343,6 +348,28 @@
 	wg-related-task-object .delete-icon {
 		right: 24px !important;
 	}
+	.workflow-button {
+		font-size: 13px;
+		white-space: nowrap;
+	}
+
+	/** Full overlay - task workflow **/
+	.cdk-overlay-pane:has(dlg-cmf-workflow-task) {
+		max-width: 100% !important;
+		width: calc(100% - 2em);
+		height: calc(100% - 2em);
+	}
+	.cdk-overlay-pane .dialog__body {
+		width: 100%;
+		height: 100%
+	}
+	.cdk-overlay-pane .cmf-dialog__header {
+		margin-bottom: 0;
+	}
+	.cdk-overlay-pane .cmf-dialog__content {
+		max-height: 100%;
+	}
+	/** /Full overlay - task workflow **/
 
 	/** Full width task page **/
 	.normal-screen {
@@ -350,7 +377,7 @@
 	}
 	.body__full {
 		max-width: 100%;
-		padding: 0 !important;
+		padding: 0 5px !important;
 		margin: 0;
 	}
 	.toolbar.full, .toolbar.full .toolbar__left-full {
@@ -373,6 +400,7 @@
 		width: auto;
 		height: auto;
 		max-height: fit-content;
+		margin: auto;
 	}
 
 	#task-popup-dialog .toolbar {
@@ -382,6 +410,9 @@
 	}
 	#task-popup-dialog .content {
 		padding: 5px;
+	}
+	frm-task .content__left {
+		padding: 0 5px 5px 5px !important;
 	}
 	#task-popup-dialog frm-task .content .content__left {
 		padding-top: 0 !important;
@@ -554,4 +585,39 @@
 		margin-top: -3px !important;
 	}
 	/** /Kanban board **/
+
+	/** Tasks list (e.g. https://eva.gid.team/filter/BqlFilter/RFBF-005172#data-devops-tasks) **/
+	frm-cmf-task-filter frm-filter-editor, frm-cmf-task-filter .task-filter-name-wrapper {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	cmf-button, wg-filter-button, button, input {
+		height: 20px !important;
+		min-height: 20px !important;
+		line-height: 20px !important;
+		padding: 0 0.5em !important;
+		vertical-align: middle;
+	}
+
+	frm-cmf-task-filter .task-filter-name-wrapper {
+		align-items: baseline !important;
+	}
+	wg-cmf-task-filter-fields-settings {
+		position: absolute !important;
+		right: 0;
+		border: 1px solid green;
+	}
+	wg-cmf-list-pg .table__titles {
+		padding: 0 !important;
+	}
+	wg-cmf-list-pg .table__titles .header {
+		font-weight: bold;
+		font-size: 100%;
+	}
+	wg-cmf-list-pg .extlist__col {
+		min-height: 15px !important;
+		font-size: 90%;
+	}
+	/** /Tasks list **/
 }
