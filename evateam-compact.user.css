@@ -538,7 +538,7 @@
 	}
 	/* Cards/ */
 
-	/** Implied installed and enabled HuEvaLinks **/
+	/** Implied installed and enabled HuEvaLinks - https://github.com/Hubbitus/eva-links-fixer.user.js **/
 	wg-kanban-card .task-links {
 		align-items: start !important;
 	}
