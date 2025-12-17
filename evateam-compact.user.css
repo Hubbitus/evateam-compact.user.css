@@ -30,6 +30,9 @@
 	[_nghost-ng-c2160805558] {
 		gap: 0;
 	}
+	[_nghost-ng-c3533757378]{
+		padding: 0;
+	}
 
 	html {
 		--menu-padding-right: 0px !important;
@@ -184,10 +187,6 @@
 		text-wrap: pretty;
 		width: 100% !important;
 		max-width: 100% !important;
-	}
-
-	app-cmf-icon { /* always show icons of "all tasks", desks and so on (https://eva.gid.team/desk/Task/SECR-18) */
-		visibility: visible !important;
 	}
 
 	/* favorites */
@@ -587,7 +586,7 @@
 	/** /Kanban board **/
 
 	/** Tasks list (e.g. https://eva.gid.team/filter/BqlFilter/RFBF-005172#data-devops-tasks) **/
-	frm-cmf-task-filter frm-filter-editor, frm-cmf-task-filter .task-filter-name-wrapper {
+	frm-cmf-task-filter frm-filter-editor, frm-cmf-task-filter .task-filter-name-wrapper, .task-list-wrapper {
 		padding: 0 !important;
 		margin: 0 !important;
 	}
@@ -606,7 +605,10 @@
 	wg-cmf-task-filter-fields-settings {
 		position: absolute !important;
 		right: 0;
-		border: 1px solid green;
+		width: 10em;
+	}
+	wg-dropdown-selector button {
+		margin: 0 !important; /* Fis "столбцы" dropdown */
 	}
 	wg-cmf-list-pg .table__titles {
 		padding: 0 !important;
@@ -615,9 +617,50 @@
 		font-weight: bold;
 		font-size: 100%;
 	}
-	wg-cmf-list-pg .extlist__col {
+	wg-cmf-list-pg .table__rows .extlist__col {
 		min-height: 15px !important;
 		font-size: 90%;
+		padding: 1px 2px !important;
+		border-right: 1px inset #d3d3d32e;
+		align-items: center;
+
+		overflow-wrap: break-word !important;
+		hyphens: auto !important;
+/*		overflow: visible !important; */
+		white-space: wrap !important;
+		text-wrap: pretty !important;
+		word-break: break-all !important;
+
+		line-height: 14px;
+	}
+	wg-cmf-list-pg .table__rows .extlist__col .task-links {
+		align-items: first baseline;
+		line-height: 14px;
+	}
+	.inline-edit-wrap .inline-edit .inline-edit-text {
+		word-break: break-all !important;
+	}
+	wg-cmf-list-pg .table__rows .row {
+		align-items: center;
+	}
+	/** Show oure HuEvaLinks only in first table cell in row! **/
+	wg-cmf-list-pg .table__rows .row .extlist__col:first-child .task-links {
+		width: 100%;
+		display: grid !important;
+		grid-template-columns: auto 11px 13px !important;
+	}
+	wg-cmf-list-pg .table__rows .row .extlist__col:nth-child(n+2) .task-links .hueva-direct-link,
+	wg-cmf-list-pg .table__rows .row .extlist__col:nth-child(n+2) .task-links .hueva-copy-btn,
+	wg-cmf-list-pg .table__rows .row .extlist__col:nth-child(n+2) .buttons-hover {
+		display: none !important;
+	}
+	/** /Show oure HuEvaLinks only in first table cell in row! **/
+
+	.content-wrapper.displaced {
+		height: calc(100vh - 62px) !important;
+	}
+	.table__footer {
+		max-height: 19px !important;
 	}
 	/** /Tasks list **/
 }

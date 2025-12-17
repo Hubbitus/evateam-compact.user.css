@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2025-12-17 Styling tasks list grid (table)
 * 2025-12-16 Add style with HuEvaLinks.user.js
 * 2025-12-14 Style all blocks in task
 * 2025-12-13 Style kanban board
