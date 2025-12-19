@@ -176,6 +176,12 @@
 	.cmf-tree .nested-nodes .node-name {
 		padding-left: 12px !important;
 	}
+	.mat-icon-rtl-mirror, .mat-icon-arrow {
+		visibility: visible !important; /* Always show icons of group open */
+	}
+	.mat-icon-rtl-mirror {
+		margin: 3px 0 0 -3px;
+	}
 
 	/* wrap lines */
 	.cmf-tree .overflow-ellipsis .node-name, .cmf-tree .overflow-ellipsis .node-name-item, .cmf-tree .overflow-ellipsis .node-name-item > span, .left-favorites__menu__item__title { /* items word-wrapping */
@@ -226,7 +232,7 @@
 		padding: 0 !important;
 	}
 	.toolbar {
-		top: 7px !important;
+		/* margin-top: 24px !important; Break roadmap: https://eva.gid.team/project/Roadmap/RM-000059 */
 		margin-left: 0 !important;
 	}
 	#ganttChartToolbarId.toolbar {
@@ -255,6 +261,9 @@
 		border: 1px solid lightgrey;
 		border-radius: 5px;
 		padding: 5px;
+	}
+	#task-popup-dialog frm-task .body {
+		padding-top: 0;
 	}
 	.crud__group__wrapper h2:first-child, .task-result h2:first-child, app-subtask-related-task .group-title, .activity-title { /* Description and result headers */
 		width: max-content;
@@ -323,7 +332,7 @@
 		text-shadow: 1px 2px 5px #0745a6;
 	}
 	.form__title .inline-edit-button, .form__title .inline-edit {
-		height: 33px;
+		min-height: 33px;
 	}
 	.form-header-tags {
 		margin-top: -5px;
@@ -511,6 +520,9 @@
 		margin: 0 !important;
 		border: 0 !important;
 	}
+	.swimlane__control {
+		top: 61px !important;
+	}
 	.kanban-wrapper {
 		height: calc(100vh - 30px) !important;
 		scrollbar-width: thin;
@@ -569,13 +581,17 @@
 	/* Cards/ */
 
 	/** Implied installed and enabled HuEvaLinks - https://github.com/Hubbitus/eva-links-fixer.user.js **/
+	.task-links .hueva-copy-btn, .task-links .hueva-direct-link {
+		opacity: 0.2;
+	}
+
 	wg-kanban-card .task-links {
 		align-items: start !important;
 	}
 	wg-kanban-card .hueva-direct-link {
 		position: absolute;
 		right: 10px;
-		margin-top: -3px !important;
+		margin: 1px 8px 0 0 !important;
 		z-index: 2;
 	}
 	wg-kanban-card .hueva-copy-btn {
@@ -638,7 +654,8 @@
 		line-height: 14px;
 	}
 	.inline-edit-wrap .inline-edit .inline-edit-text {
-		word-break: break-all !important;
+		/* word-break: break-all !important;*/
+		hyphens: auto;
 	}
 	wg-cmf-list-pg .table__rows .row {
 		align-items: center;
