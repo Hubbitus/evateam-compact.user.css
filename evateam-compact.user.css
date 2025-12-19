@@ -34,6 +34,9 @@
 		padding: 0;
 	}
 
+	:root body[data-tui-theme] {
+		--tui-padding-s: 0px;
+	}
 	html {
 		--menu-padding-right: 0px !important;
 		--feed-content-margin-left: 0 !important;
@@ -256,16 +259,18 @@
 	.project-module-sidenav {
 		height: 100%;
 	}
-	.crud__group__wrapper, .task-result, app-subtask-related-task, frm-task div:has(.activity-title) { /* Task blocks like "Описание", "Дочерние задачи", "Связанные задачи", "Активность" */
+	.crud__group__wrapper, .task-result, app-subtask-related-task, frm-task div:has(.activity-title), frm-cmf-related-object-list { /* Task blocks like "Описание", "Дочерние задачи", "Связанные задачи", "Активность" */
 		/* margin-top: 5px !important; */
 		border: 1px solid lightgrey;
 		border-radius: 5px;
 		padding: 5px;
+		margin-top: 5px;
 	}
 	#task-popup-dialog frm-task .body {
 		padding-top: 0;
+		margin-top: 0;
 	}
-	.crud__group__wrapper h2:first-child, .task-result h2:first-child, app-subtask-related-task .group-title, .activity-title { /* Description and result headers */
+	.crud__group__wrapper h2:first-child, .task-result h2:first-child, app-subtask-related-task .group-title, .activity-title, frm-cmf-related-object-list .groups-list-title { /* Description and result headers */
 		width: max-content;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
@@ -274,6 +279,8 @@
 		position: relative;
 		top: -5px;
 		left: -5px;
+		padding: 0 !important;
+		margin: 0 !important;
 	}
 	.tasks-list-title:after {
 		content: ":";
@@ -282,13 +289,11 @@
 	.task-result {
 		margin-top: 5px !important;
 	}
-	[_nghost-ng-c1144403715] .expansion-panel-header[_ngcontent-ng-c1144403715] {
-		height: auto;
-	}
 	.expansion-panel-header {
 		border: 1px solid var(--expansion-panel-border-color);
 		border-radius: 20px;
-		top: -6px;
+		top: -2px !important;
+		height: auto !important;
 	}
 	.expansion-panel-header::before {
 		display: none;
@@ -335,8 +340,7 @@
 		min-height: 33px;
 	}
 	.form-header-tags {
-		margin-top: -5px;
-		margin-bottom: 8px;
+		margin: 3px 0 1px 0;
 	}
 	.mce-content-body a.wiki-card-text { /* Other content links (tasks, wiki documents etc) */
 		background: #5555550f;
@@ -348,18 +352,50 @@
 
 	wg-related-task-object .line-subtask {
 		/* grid-template-columns: 100px minmax(50px, 1fr) 124px 28px 14px 24px; */
-		grid-template-columns: max-content auto max-content 28px max-content 24px !important;
+		grid-template-columns: max-content auto max-content 26px 14px 24px !important;
 		gap: 1px !important;
-		height: 26px !important;
-		min-height: 22px !important;
+		height: auto !important;
+		min-height: 20px !important;
 	}
-	wg-related-task-object .delete-icon {
-		right: 24px !important;
+	wg-related-task-object .delete-icon /* task links */, frm-cmf-related-object-list .delete-btn /* page links */ {
+		right: -24px !important;
+		top: 4px !important;
+		box-shadow: 0px 1px 11px 9px rgba(34, 60, 80, 0.2);
+		background-color: azure;
+		border-radius: 10px;
+	}
+	frm-cmf-related-object-list .card {
+		margin-right: 0 !important;
+		height: auto;
+		line-height: 0.9em;
+	}
+	frm-cmf-related-object-list .card:before {
+		content: "‣";
+	}
+	.item-subtask.status button {
+		text-transform: lowercase !important;
+	}
+	.item-subtask.status button span:first-letter {
+		text-transform: uppercase !important;
+	}
+	frm-cmf-related-object-list {
+		margin-bottom: 3px !important;
 	}
 	.workflow-button {
 		font-size: 13px;
 		white-space: nowrap;
 	}
+
+	/** Fix broken priority icons without image and long text: "Такой иконки нет или она еще не добавлена в код" **/
+	app-cmf-doodle-icon[title="undefined"]:after {
+		content: "⁈";
+		color: red;
+		visibility: visible;
+		display: block;
+	}
+	app-cmf-doodle-icon[title="undefined"] {
+		visibility: hidden;
+	}/** /Fix broken priority icons without image and long text: "Такой иконки нет или она еще не добавлена в код" **/
 
 	/** Full overlay - task workflow **/
 	.cdk-overlay-pane:has(dlg-cmf-workflow-task) {
@@ -521,7 +557,7 @@
 		border: 0 !important;
 	}
 	.swimlane__control {
-		top: 61px !important;
+		top: 81px !important;
 	}
 	.kanban-wrapper {
 		height: calc(100vh - 30px) !important;
