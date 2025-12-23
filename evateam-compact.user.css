@@ -67,13 +67,13 @@
 		height: calc(100vh - 32px) !important;
 	}
 	.page__navigate { /* project name */
-		top: 1px;
+		top: 6px;
 		right: 590px;
 		background: lightgoldenrodyellow;
 		z-index: 120;
 		opacity: 0.8;
 		width: auto !important;
-		height: 29px;
+		height: 20px;
 		border-radius: 5px;
 		display: flex;
 		align-items: center;
@@ -129,12 +129,19 @@
 	.project-module.displaced, .wrapper__left.displaced, .wrapper__right.displaced, .project-module .mat-sidenav-content.displaced {
 	/*	height: calc(100vh - 3px) !important; Break layout on requirements! */
 	}
-	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left {
-		height: 100vh !important;
+	#section-to-print, .project-module, .mat-drawer-content, .wrapper__left, .wrapper__right {
+		height: calc(100vh - 33px) !important;
+		overflow-y: clip;
 	}
 	.scrollable-block {
 		overflow-y: auto;
 		height: 100% !important;
+	}
+	wg-cmf-search .trigger-input-icon {
+		top: 4px !important;
+	}
+	wg-cmf-search input.trigger-input {
+		padding-left: 28px !important;
 	}
 	/** /Top header **/
 
@@ -214,6 +221,9 @@
 	.favorites .left-favorites__menu__item .context {
 		padding-left: 0 !important;
 	}
+	.favorites button {
+		padding: 0 !important;
+	}
 	/** /Tree of docs at left **/
 
 	/** Fix task code truncation in tasks links list **/
@@ -251,7 +261,8 @@
 		line-height: 1.2;
 	}
 	.content .form { /* main task view - full screen */
-		margin-right: 0.5em;
+		margin-right: 5px;
+		margin-left: 5px;
 	}
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
 		padding: 5px !important;
@@ -266,6 +277,9 @@
 		border-radius: 5px;
 		padding: 5px;
 		margin-top: 5px;
+	}
+	.crud__group__wrapper {
+		margin-top: 0;
 	}
 	#task-popup-dialog frm-task .body {
 		padding-top: 0;
@@ -336,8 +350,11 @@
 	.content__right-wrapper, .content__right {
 		margin: 0 !important;
 	}
+	.content__right .status-wrapper {
+		margin: 5px 0;
+	}
 	.form__title {
-		/*margin-block: 0.5em !important;*/
+		font-size: 22px;
 		margin: 0px 0 1px 0 !important;
 		text-shadow: 1px 2px 5px #0745a6;
 	}
@@ -430,7 +447,7 @@
 	.body__full {
 		max-width: 100%;
 		padding: 0 5px !important;
-		margin: 0;
+		margin: 5px !important;
 	}
 	.toolbar.full, .toolbar.full .toolbar__left-full {
 		padding: 0 !important;
@@ -440,7 +457,7 @@
 		height: 25px;
 	}
 	.toolbar.full {
-		margin: 1px 0 7px 14px !important;
+		margin: 1px 0 -3px 4px !important;
 		display: contents;
 	}
 	/** /Full width task page **/
@@ -628,6 +645,7 @@
 	/** Implied installed and enabled HuEvaLinks - https://github.com/Hubbitus/eva-links-fixer.user.js **/
 	.task-links .hueva-copy-btn, .task-links .hueva-direct-link {
 		opacity: 0.2;
+		padding: 0 !important;
 	}
 
 	wg-kanban-card .task-links {
@@ -657,7 +675,7 @@
 		height: 20px !important;
 		min-height: 20px !important;
 		line-height: 20px !important;
-		padding: 0 0.5em !important;
+		padding: 0 5px !important;
 		vertical-align: middle;
 	}
 
