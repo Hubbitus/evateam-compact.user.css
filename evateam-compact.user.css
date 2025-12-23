@@ -44,6 +44,10 @@
 		--default-line-height: 90% !important;
 	}
 
+	.inline-edit-wrapper {
+		align-items: center !important;
+	}
+
 	/** Top header **/
 	.project-content {
 		padding: 0 !important;
@@ -673,8 +677,8 @@
 
 	cmf-button, wg-filter-button, button, input {
 		height: 20px !important;
-		min-height: 20px !important;
-		line-height: 20px !important;
+		min-height: 12px !important;
+		line-height: 12px !important;
 		padding: 0 5px !important;
 		vertical-align: middle;
 	}
@@ -692,6 +696,8 @@
 	}
 	wg-cmf-list-pg .table__titles {
 		padding: 0 !important;
+		background-color: #d3d3d387;
+		word-wrap: anywhere;
 	}
 	wg-cmf-list-pg .table__titles .header {
 		font-weight: bold;
@@ -711,15 +717,18 @@
 		text-wrap: pretty !important;
 		word-break: break-all !important;
 
-		line-height: 14px;
+		line-height: 12px;
 	}
 	wg-cmf-list-pg .table__rows .extlist__col .task-links {
 		align-items: first baseline;
-		line-height: 14px;
+		line-height: 12px;
 	}
-	.inline-edit-wrap .inline-edit .inline-edit-text {
+	wg-cmf-list-pg .inline-edit-wrap .inline-edit .inline-edit-text {
 		/* word-break: break-all !important;*/
 		hyphens: auto;
+	}
+	wg-cmf-list-pg .inline-edit-wrap button {
+		height: 12px !important;
 	}
 	wg-cmf-list-pg .table__rows .row {
 		align-items: center;
@@ -742,6 +751,12 @@
 	}
 	.table__footer {
 		max-height: 19px !important;
+	}
+
+	/* Fix-workaround of disappeared priority icon with "medium" value */
+	app-cmf-doodle-icon.priority-icon svg.ng-star-inserted path {
+		stroke: var(--color-gray-aaa);
+		stroke-width: 1px;
 	}
 	/** /Tasks list **/
 }
