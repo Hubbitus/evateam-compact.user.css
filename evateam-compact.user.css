@@ -108,7 +108,7 @@
 	}
 	#task-popup-dialog .toolbar__right {
 		right: 15px !important;
-		top: 6px !important;
+		top: 1px !important;
 	}
 	.gantt__layout {
 		height: calc(100% - 22px);
@@ -255,6 +255,7 @@
 	}
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
 		padding: 5px !important;
+		margin-top: 0;
 	}
 	.project-module-sidenav {
 		height: 100%;
@@ -311,7 +312,11 @@
 		display: flex;
 	}
 	wg-field:has(wg-field-title.tags) wg-field-title {
-		margin: auto 0;
+		margin: auto 4px auto 0;
+	}
+
+	wg-field .content {
+		padding: 0 !important;
 	}
 
 	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
@@ -364,13 +369,14 @@
 		background-color: azure;
 		border-radius: 10px;
 	}
-	frm-cmf-related-object-list .card {
+	frm-cmf-related-object-list .card, wg-related-wiki-object .card {
 		margin-right: 0 !important;
-		height: auto;
-		line-height: 0.9em;
+		height: auto !important;
+		line-height: 0.9em !important;
 	}
 	frm-cmf-related-object-list .card:before {
 		content: "‣";
+		margin-right: -4px;
 	}
 	.item-subtask.status button {
 		text-transform: lowercase !important;
@@ -395,6 +401,8 @@
 	}
 	app-cmf-doodle-icon[title="undefined"] {
 		visibility: hidden;
+		height: 16px !important;
+		width: 16px !important;
 	}/** /Fix broken priority icons without image and long text: "Такой иконки нет или она еще не добавлена в код" **/
 
 	/** Full overlay - task workflow **/
@@ -450,6 +458,7 @@
 	#task-popup-dialog .toolbar {
 		margin: 0px 0px 0px 5px !important;
 		padding: 0px;
+		height: 25px;
 		position: initial;
 	}
 	#task-popup-dialog .content {
@@ -623,17 +632,18 @@
 
 	wg-kanban-card .task-links {
 		align-items: start !important;
+		display: block !important;
 	}
 	wg-kanban-card .hueva-direct-link {
 		position: absolute;
-		right: 10px;
-		margin: 1px 8px 0 0 !important;
+		right: 4px;
+		margin: 5px 8px 0 0 !important;
 		z-index: 2;
 	}
 	wg-kanban-card .hueva-copy-btn {
 		position: absolute;
-		right: -5px;
-		margin-top: -3px !important;
+		right: -2px;
+		margin-top: 1px !important;
 	}
 	/** /Kanban board **/
 
