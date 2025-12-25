@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2025-12-25 Fixes for board styles
 * 2025-12-23 Fix board cards. Minor paddings and margins fixes. Fix tasks list (filters) tables.
 * 2025-12-19 Add style for page links in the tasks, fix subtasks lines height
 * 2025-12-17 Styling tasks list grid (table)

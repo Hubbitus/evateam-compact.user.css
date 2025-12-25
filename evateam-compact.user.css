@@ -111,7 +111,7 @@
 		top: -6px !important;
 	}
 	#task-popup-dialog .toolbar__right {
-		right: 15px !important;
+		right: 5px !important;
 		top: 1px !important;
 	}
 	.gantt__layout {
@@ -271,6 +271,7 @@
 	#task-popup-dialog .content .form { /* popup task view (e.g. in tasks list, roadmap and so on ) */
 		padding: 5px !important;
 		margin-top: 0;
+		margin-left: 0;
 	}
 	.project-module-sidenav {
 		height: 100%;
@@ -358,12 +359,15 @@
 		margin: 5px 0;
 	}
 	.form__title {
-		font-size: 22px;
 		margin: 0px 0 1px 0 !important;
-		text-shadow: 1px 2px 5px #0745a6;
 	}
 	.form__title .inline-edit-button, .form__title .inline-edit {
 		min-height: 33px;
+	}
+	.form__title .inline-edit-item {
+		font-size: 20px !important;
+		text-shadow: 2px 1px 5px #0745a6;
+		padding-bottom: 5px;
 	}
 	.form-header-tags {
 		margin: 3px 0 1px 0;
@@ -654,7 +658,7 @@
 
 	wg-kanban-card .task-links {
 		align-items: start !important;
-		display: block !important;
+		display: inline-flex !important;
 	}
 	wg-kanban-card .hueva-direct-link {
 		position: absolute;
@@ -666,6 +670,23 @@
 		position: absolute;
 		right: -2px;
 		margin-top: 1px !important;
+	}
+	.cdk-drag-preview .card__left .card-info .card-badge span, .card .card__left .card-info .card-badge span, .cdk-drag-preview .card__left .card-info .card-badge, .card .card__left .card-info .card-badge {
+		white-space: break-spaces !important;
+		height: auto !important;
+		padding: 1px !important;
+		hyphens: auto;
+	}
+
+	.kanban-wrapper .swimlane__control {
+		background-color: #cbe3f9 !important;
+	}
+
+	wg-cmf-kanban {
+		padding-bottom: 1px !important;
+	}
+	wg-cmf-kanban-column .cards {
+		min-height: auto !important;
 	}
 	/** /Kanban board **/
 
