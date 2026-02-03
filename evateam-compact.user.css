@@ -254,6 +254,7 @@
 	}
 	#ganttChartToolbarId.toolbar {
 		top: 0 !important;
+		padding-top: 3px !important;
 	}
 	.mode-list, .mode-gantt {
 		padding: 0 5px !important;
@@ -356,7 +357,10 @@
 		margin: 0 !important;
 	}
 	.content__right .status-wrapper {
-		margin: 5px 0;
+		margin: 5px 0 5px 0;
+	}
+	#task-popup-dialog .content__right .status-wrapper {
+		margin: 0 0 5px 0;
 	}
 	.form__title {
 		margin: 0px 0 1px 0 !important;
@@ -416,15 +420,18 @@
 		font-size: 13px;
 		white-space: nowrap;
 	}
+	app-cmf-container .content-item {
+		margin-bottom: 5px !important;
+	}
 
 	/** Fix broken priority icons without image and long text: "Такой иконки нет или она еще не добавлена в код" **/
-	app-cmf-doodle-icon[title="undefined"]:after {
+	app-cmf-doodle-icon[title="undefined"]:not(:has(svg))::after {
 		content: "⁈";
 		color: red;
 		visibility: visible;
 		display: block;
 	}
-	app-cmf-doodle-icon[title="undefined"] {
+	app-cmf-doodle-icon[title="undefined"]:not(:has(svg)) {
 		visibility: hidden;
 		height: 16px !important;
 		width: 16px !important;
@@ -502,6 +509,16 @@
 	app-subtask-related-task {
 		margin: 5px 0 0 0 !important;
 	}
+
+	/** Sprints/releases/lists edit popup menu elements **/
+	wg-default-option > span > div {
+		display: flex;
+	}
+	wg-default-option > span > div > div {
+		padding-right: 5px;
+	}
+	/** /Sprints/releases/lists edit popup menu elements **/
+
 	/** /Popup task view **/
 	/** /Task view **/
 
@@ -526,6 +543,42 @@
 	}
 	.column .node-icon:has(svg[fill=none]) { /* Issue type icon */
 		margin-top: -2px;
+	}
+
+	.kanva-header {
+		top: 39px !important;
+	}
+	.konvajs-content {
+/*		height: calc(100vh - 154px) !important; Break all. TODO */
+/*		border: 1px solid red; */
+		top: 1px !important;
+
+	}
+	wg-gantt-new-tree-menu-header .header-column {
+		padding: 0 !important;
+		border-top: 1px solid #d3d3d361 !important;
+		border-right: 1px solid #d3d3d361 !important;
+	}
+	wg-gantt-new-tree-menu-header .header-column {
+		border-bottom: 1px solid #d3d3d361 !important;
+		container-type: inline-size; /* Adaptive font size!!! */
+	}
+	wg-gantt-new-tree-menu .column {
+		border-bottom: none;
+		border-right: 1px solid #d3d3d32e !important;
+	}
+	.header-column .value, wg-gantt-new-tree-item .value {
+		white-space: pre-line !important;
+		overflow-wrap: anywhere !important;
+  		hyphens: auto !important;
+		text-align: center !important;
+		font-size: clamp(8px, 15cqw, 15px) !important; /* Adaptive font size!!! */
+	}
+	wg-gantt-new-tree-item .value, wg-gantt-new-tree-item .name, wg-gantt-new-tree-item .content, wg-gantt-new-tree-item .text {
+		font-size: small !important;
+	}
+	.header-column .grad {
+		display: none;
 	}
 	/** /Roadmap view **/
 
@@ -679,7 +732,11 @@
 	}
 
 	.kanban-wrapper .swimlane__control {
-		background-color: #cbe3f9 !important;
+		/* background-color: #cbe3f9 !important; */
+		background: linear-gradient(0deg,rgb(203, 227, 249) 0%, rgba(203, 227, 249, 0.29) 100%) !important;
+	}
+	.kanban-wrapper .swimlane__control .swimlane-name {
+		align-items: center !important;
 	}
 
 	wg-cmf-kanban {
@@ -751,8 +808,8 @@
 	wg-cmf-list-pg .inline-edit-wrap button {
 		height: 12px !important;
 	}
-	wg-cmf-list-pg .table__rows .row {
-		align-items: center;
+	.row {
+		align-items: center !important;
 	}
 	/** Show oure HuEvaLinks only in first table cell in row! **/
 	wg-cmf-list-pg .table__rows .row .extlist__col:first-child .task-links {
