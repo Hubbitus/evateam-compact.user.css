@@ -36,6 +36,8 @@
 
 	:root body[data-tui-theme] {
 		--tui-padding-s: 0px;
+		--tui-height: 1.2rem;
+		--tui-height-s: 1.2rem;
 	}
 	html {
 		--menu-padding-right: 0px !important;
@@ -139,7 +141,7 @@
 	}
 	.scrollable-block {
 		overflow-y: auto;
-		height: 100% !important;
+		height: calc(100% - 73px) !important;
 	}
 	wg-cmf-search .trigger-input-icon {
 		top: 4px !important;
@@ -248,6 +250,9 @@
 		margin: 0 !important;
 		padding: 0 !important;
 	}
+	.project-module-sidenav, div.content-item {
+		margin-bottom: 0 !important;
+	}
 	.toolbar {
 		/* margin-top: 24px !important; Break roadmap: https://eva.gid.team/project/Roadmap/RM-000059 */
 		margin-left: 0 !important;
@@ -328,6 +333,10 @@
 		padding: 10px 10px 0 10px !important;
 		border-radius: 0 0 5px 5px !important;
 	}
+	wg-field {
+		grid-template-columns: 180px 1fr !important;
+		border-bottom: 1px dotted #d3d3d3ab;
+	}
 	wg-field:has(wg-field-title.tags) {
 		display: flex;
 	}
@@ -337,6 +346,16 @@
 
 	wg-field .content {
 		padding: 0 !important;
+	}
+	wg-field .control {
+		align-content: center !important;
+	}
+	wg-field-title {
+		padding: 0 !important;
+	}
+
+	.expansion-panel-widget {
+		border-bottom: 5px !important;
 	}
 
 	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
@@ -495,6 +514,7 @@
 	}
 	#task-popup-dialog .content {
 		padding: 5px;
+		overflow-x: clip;
 	}
 	frm-task .content__left {
 		padding: 0 5px 5px 5px !important;
@@ -570,9 +590,10 @@
 	.header-column .value, wg-gantt-new-tree-item .value {
 		white-space: pre-line !important;
 		overflow-wrap: anywhere !important;
-  		hyphens: auto !important;
+		hyphens: auto !important;
 		text-align: center !important;
 		font-size: clamp(8px, 15cqw, 15px) !important; /* Adaptive font size!!! */
+		line-height: 70%;
 	}
 	wg-gantt-new-tree-item .value, wg-gantt-new-tree-item .name, wg-gantt-new-tree-item .content, wg-gantt-new-tree-item .text {
 		font-size: small !important;
