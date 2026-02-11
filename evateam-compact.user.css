@@ -44,10 +44,30 @@
 		--feed-content-margin-left: 0 !important;
 		--tui-padding-s: 0 !important;
 		--default-line-height: 90% !important;
+		--default-font-size: 13px !important;
+	}
+	[_nghost-ng-c2116504723] {
+		line-height: 15px !important;
 	}
 
 	.inline-edit-wrapper {
 		align-items: center !important;
+	}
+
+	h1 {
+		font-size: 17px;
+		padding: 6px 0 0 0 !important;
+	}
+	h2 {
+		font-size: 14px;
+		padding: 4px 0 0 0 !important;
+	}
+	h3 {
+		font-size: 13px;
+		padding: 2px 0 0 0 !important;
+	}
+	ul {
+		margin-top: 0 !important;
 	}
 
 	/** Top header **/
@@ -246,7 +266,7 @@
 	}
 
 	/** Task view **/
-	h1, h2, h3, h4, h5, h6, p, wg-field, .expansion-panel-header, .wrapper__right, .content__full, .mode-list, .mode-gantt, .project-module-sidenav, div.content-item:not(.task-result), .app-comment-form {
+	p, wg-field, .expansion-panel-header, .wrapper__right, .content__full, .mode-list, .mode-gantt, .project-module-sidenav, div.content-item:not(.task-result), .app-comment-form {
 		margin: 0 !important;
 		padding: 0 !important;
 	}
@@ -334,8 +354,11 @@
 		border-radius: 0 0 5px 5px !important;
 	}
 	wg-field {
-		grid-template-columns: 180px 1fr !important;
+		/* grid-template-columns: 160px fit-content !important; */
+		grid-template-columns: minmax(140px, max-content) 2fr !important;
+		grid-template-columns: 140px 1fr !important;
 		border-bottom: 1px dotted #d3d3d3ab;
+		container-type: inline-size;
 	}
 	wg-field:has(wg-field-title.tags) {
 		display: flex;
@@ -349,13 +372,24 @@
 	}
 	wg-field .control {
 		align-content: center !important;
+		font-size: small !important;
 	}
 	wg-field-title {
 		padding: 0 !important;
+		align-content: center;
+/*		container-type: inline-size;
+ 		white-space: nowrap;
+		font-size: clamp(50%, 110%, 210%) !important;*/
+	}
+	wg-field-title.op_gantt_task\.sched_finish_date { /* Hack: "Плановая дата окончания" is very wide */
+		font-size: 80% !important;
+	}
+	wg-field .control .wrapper { /* Space between avatar and username */
+		gap: 2px !important;
 	}
 
 	.expansion-panel-widget {
-		border-bottom: 5px !important;
+		margin-bottom: 5px !important;
 	}
 
 	[_nghost-ng-c1721141748] .content[_ngcontent-ng-c1721141748] .form[_ngcontent-ng-c1721141748] {
@@ -858,4 +892,20 @@
 		stroke-width: 1px;
 	}
 	/** /Tasks list **/
+
+	/** HACK! Hide garbage fields in the task view until them will be removed from screen **/
+	wg-field:has(wg-field-title.deadline) /* Крайний срок */
+	, wg-field:has(wg-field-title.period_interval) /* Интервал повторения */
+	, wg-field:has(wg-field-title.period_next_date) /* Дата повторения */
+	, wg-field:has(wg-field-title.period_clear_checkbox) /* Период. Сбросить чекбоксы */
+	, wg-field:has(wg-field-title.period_create_new) /* Период. Создавать новую */
+	, wg-field:has(wg-field-title.cf_10720_2hzh) /* Expiration */
+	, wg-field:has(wg-field-title.cf_12825_2hzh) /* Begin Date */
+	, wg-field:has(wg-field-title.cf_10738_2hzh) /* Planned End Date */
+	, wg-field:has(wg-field-title.cf_12300_2hzh) /* План старта */
+	, wg-field:has(wg-field-title.cf_12301_2hzh) /* План завершения */
+	{
+		background-color: green;
+		display: none;
+	}
 }

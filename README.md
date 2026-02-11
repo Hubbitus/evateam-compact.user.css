@@ -21,6 +21,7 @@ That style will "return" me data on tha page and clean waste spaces…
 Work distributed under terms of [CC BY - Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
 
 ## Changelog
+* 2026-02-11 Style more task right panels. And also headers.
 * 2026-02-10 Compact rows of task right panels
 * 2026-02-03 Roadmap styling table, including headers adaptive font size
 * 2025-12-25 Fixes for board styles
